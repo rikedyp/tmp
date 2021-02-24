@@ -17,6 +17,7 @@ jobs:
         id: majmin
         run: |
           VER=$(cat ./version.txt)
+          echo ${VER}
           echo "::set-output name=version::${VER}"
 #        id: read_file
 #        uses: andstor/file-reader-action@v1
@@ -33,7 +34,7 @@ jobs:
         with:
          # ver: ${{ cat 'version.txt' }}
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "${ steps.majmin.outputs.version }}.${{ github.head_ref }}-${{ github.sha }}"
+          automatic_release_tag: "${ steps.majmin.outputs.version }}.${{ github.sha }}"
           prerelease: false
           title: "Development Build"
           files: |
