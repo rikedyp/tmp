@@ -1,0 +1,35 @@
+name: "Draft Release"
+
+on:
+  push:
+    branches:
+      - "master"
+  workflow_dispatch:
+
+jobs:
+# Generate patch version number
+  draft_release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v1
+      - name: Read file
+        uses: andstor/file-reader-action@v1
+        with:
+          path: "version.txt"
+      - name: File contents
+         run: echo "${ steps.read_file.outputs.contents }"
+# Create or update Draft release
+      - name: Build and test
+        run: |
+          echo "done!"
+      - name: Draft release
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "${ steps.read_file.outputs.contents }" + "." + ${{ git rev-list --count HEAD }}
+          prerelease: false
+          title: "Development Build"
+          files: |
+            MyTool.dyalog
+
