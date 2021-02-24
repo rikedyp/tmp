@@ -2,7 +2,5 @@ site_name: MyTool Documentation
 
 theme: 
   name: material
-
-extra:
-  version:
-    provider: mike
+  features:
+    - navigation.tabs
