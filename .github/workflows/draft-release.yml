@@ -28,7 +28,7 @@ jobs:
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "${ steps.read_file.outputs.contents }.${{ git rev-list --count HEAD }}"
+          automatic_release_tag: "${ steps.read_file.outputs.contents }.${{ github.head_ref }}-${{ github.sha }}"
           prerelease: false
           title: "Development Build"
           files: |
