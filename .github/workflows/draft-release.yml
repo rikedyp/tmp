@@ -19,16 +19,13 @@ jobs:
           VER=$(cat ./version.txt)
           echo ${VER}
           echo "::set-output name=version::${VER}"
-#        id: read_file
-#        uses: andstor/file-reader-action@v1
-#        with:
-#          path: "version.txt"
-#      - name: File contents
-#        run: echo "${ steps.read_file.outputs.contents }"
 # Create or update Draft release
       - name: Build and test
         run: |
           echo "done!"
+      - name: Insert patch number
+        run: |
+          sed -i "/∆version ← '[0-9]\+.[0-9]\+.0'/s/.0'/.${{ github.run_number }}-${{ github.sha }}'/" MyTool.dyalog
       - name: Draft release
         uses: "marvinpinto/action-automatic-releases@latest"        
         with:
