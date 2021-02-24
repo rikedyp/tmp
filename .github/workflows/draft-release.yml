@@ -18,7 +18,7 @@ jobs:
         with:
           path: "version.txt"
       - name: File contents
-         run: echo "${ steps.read_file.outputs.contents }"
+        run: echo "${ steps.read_file.outputs.contents }"
 # Create or update Draft release
       - name: Build and test
         run: |
