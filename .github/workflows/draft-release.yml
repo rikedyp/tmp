@@ -13,7 +13,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v1
-      - name: Read file
+      - name: Read major.minor
+        id: read_file
         uses: andstor/file-reader-action@v1
         with:
           path: "version.txt"
