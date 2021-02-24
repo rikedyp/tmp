@@ -34,6 +34,7 @@ jobs:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "${{ steps.majmin.outputs.version }}.${{ github.run_number }}-${{ github.sha }}"
           prerelease: false
+          draft: true
           title: "v${{ steps.majmin.outputs.version }}.${{ github.run_number }}-${{ github.sha }}"
           files: |
             MyTool.dyalog
