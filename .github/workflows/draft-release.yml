@@ -34,7 +34,7 @@ jobs:
         with:
          # ver: ${{ cat 'version.txt' }}
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "${{ steps.majmin.outputs.version }}.${{ github.sha }}"
+          automatic_release_tag: "${{ steps.majmin.outputs.version }}.${{ github.run_number }}-${{ github.sha }}"
           prerelease: false
           title: "Development Build"
           files: |
