@@ -13,7 +13,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v1
-#      - name: Read major.minor
+      - name: Read major.minor
+        id: majmin
+        run: |
+          VER=$(cat ./version.txt)
+          echo "::set-output name=${VER}"
 #        id: read_file
 #        uses: andstor/file-reader-action@v1
 #        with:
@@ -27,7 +31,7 @@ jobs:
       - name: Draft release
         uses: "marvinpinto/action-automatic-releases@latest"        
         with:
-          ver: ${{ cat 'version.txt' }}
+         # ver: ${{ cat 'version.txt' }}
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "${{ cat 'version.txt' }}.${{ github.head_ref }}-${{ github.sha }}"
           prerelease: false
