@@ -1,7 +1,7 @@
 :namespace MyTool
 
   ∇ ∆version ← Version
-	∆version ← '0.2.0'
+	∆version ← '0.3.0'
 	∇
 
 	∇ r ← Feature arg
@@ -13,5 +13,7 @@
 	∇ r ← Amazing arg
 	⍝ amazing new feature
 	∇
+
+  Feature3 ← {'wow this one is a dfn'}
 
 :endnamespace
