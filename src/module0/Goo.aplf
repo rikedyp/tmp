@@ -1,0 +1,5 @@
+ Goo←{
+     this←⍵
+     that←2×⍵
+     this+2×that
+ }

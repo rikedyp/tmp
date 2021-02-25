@@ -1,0 +1,3 @@
+ r←Fun arg
+ ⍝ this is fun
+ r←×/⍳10
