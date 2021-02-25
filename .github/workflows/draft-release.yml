@@ -3,8 +3,8 @@ name: "Draft Release"
 on:
   push:
     branches:
-      - master
-      - 0.1-support
+      - "master"
+      - "0.1-support"
   workflow_dispatch:
 
 jobs:
