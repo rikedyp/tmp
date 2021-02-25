@@ -12,8 +12,12 @@ jobs:
   draft_release:
     runs-on: ubuntu-latest
     steps:
+      - name: Triggered by which branch
+        run: echo "$GITHUB_REF"
       - name: Checkout code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2      
+        with: 
+          ref: $GITHUB_REF
       - name: Read major.minor
         id: majmin
         run: |
