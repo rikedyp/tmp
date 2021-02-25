@@ -40,5 +40,5 @@ jobs:
           draft: true
           title: "v${{ steps.majmin.outputs.version }}.${{ github.run_number }}"
           files: |
-            MyTool.dyalog
+            *
 
