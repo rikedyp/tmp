@@ -17,7 +17,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2      
         with: 
-          ref: $GITHUB_REF
+          ref: "$GITHUB_REF"
       - name: Read major.minor
         id: majmin
         run: |
