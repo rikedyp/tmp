@@ -7,8 +7,4 @@ Get the version number
 Automatically drafted releases (hard coded major.minor, automated patch)
 
 ## To do
-
-It has versioned documentation (MkDocs + Mike)
-
-
-
+Fork an old release to make patches for old supported Dyalog versions
