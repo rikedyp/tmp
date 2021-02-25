@@ -35,7 +35,7 @@ jobs:
           automatic_release_tag: "${{ steps.majmin.outputs.version }}.${{ github.run_number }}-${{ github.sha }}"
           prerelease: false
           draft: true
-          title: "v${{ steps.majmin.outputs.version }}.${{ github.run_number }}-${{ github.sha }}"
+          title: "v${{ steps.majmin.outputs.version }}.${{ github.run_number }}"
           files: |
             MyTool.dyalog
 
