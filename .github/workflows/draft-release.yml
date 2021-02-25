@@ -40,5 +40,6 @@ jobs:
           draft: true
           title: "v${{ steps.majmin.outputs.version }}.${{ github.run_number }}"
           files: |
-            *
-            src/*
+            MyTool.dyalog
+            src/modul1/Fun.aplf
+            src/module0/Goo.aplf
