@@ -14,6 +14,9 @@
 	⍝ amazing new feature
 	∇
 
-  Feature3 ← {'wow this one is a dfn'}
+  Feature3 ← {
+	  'wow this one is a dfn'
+		⍝ oops there was a bug here too
+	}
 
 :endnamespace
